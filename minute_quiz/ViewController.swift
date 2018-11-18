@@ -224,7 +224,7 @@ class ViewController: UIViewController {
         correctAnswerCountLabel.text = "\(correctAnswerCount)"
         wrongAnswerCountLabel.text = "\(wrongAnswerCount)"
         scoreLabel.text = "Score: \(score)"
-        progressLabel.text = "\(questionNumber + 1) / 5"
+        progressLabel.text = "\(questionNumber + 1) / levelQuestions[questionNumber] "
         progressBar.frame.size.width = (view.frame.size.width / 5) * CGFloat(questionNumber + 1)
     
         
@@ -249,12 +249,30 @@ class ViewController: UIViewController {
             Button3Label.setTitle(levelQuestions[questionNumber].thirdOption, for: .normal)
             Button4Label.setTitle(levelQuestions[questionNumber].fourthOption, for: .normal)
             
-            
+            Button1Label.backgroundColor = UIColor(red: 1.000, green: 0.400, blue: 0.000, alpha: 1.0)
+            Button2Label.backgroundColor = UIColor(red: 1.000, green: 0.400, blue: 0.000, alpha: 1.0)
+            Button3Label.backgroundColor = UIColor(red: 1.000, green: 0.400, blue: 0.000, alpha: 1.0)
+            Button4Label.backgroundColor = UIColor(red: 1.000, green: 0.400, blue: 0.000, alpha: 1.0)
+            Button1Label.isHidden = false
+            Button2Label.isHidden = false
+            Button3Label.isHidden = false
+            Button4Label.isHidden = false
+            Button1Label.setTitleColor(UIColor.black, for: .normal)
+            Button2Label.setTitleColor(UIColor.black, for: .normal)
+            Button3Label.setTitleColor(UIColor.black, for: .normal)
+            Button4Label.setTitleColor(UIColor.black, for: .normal)
+            /*
+            Button1Label.backgroundColor = UIColor.green
+            Button2Labe2.backgroundColor = UIColor.green
+            Button3Labe3.backgroundColor = UIColor.green
+            Button4Labe4.backgroundColor = UIColor.green
+            */
+            /*
             Button1Label.backgroundColor = UIColor(red: 0.576, green: 0.153, blue: 0.561, alpha: 1.0)
             Button2Label.backgroundColor = UIColor(red: 0.576, green: 0.153, blue: 0.561, alpha: 1.0)
             Button3Label.backgroundColor = UIColor(red: 0.576, green: 0.153, blue: 0.561, alpha: 1.0)
             Button4Label.backgroundColor = UIColor(red: 0.576, green: 0.153, blue: 0.561, alpha: 1.0)
-           
+           */
             //print("after condition:\(level1)")
             
             updateUI()
@@ -286,16 +304,29 @@ class ViewController: UIViewController {
             animate(imageView: progressHud, images: heartImages)
             if senderValue == 1 {
                 Button1Label.backgroundColor = UIColor.green
-                Button1Label.pulsate()
+                //Button1Label.pulsate()
+                Button2Label.isHidden = true
+                Button3Label.isHidden = true
+                Button4Label.isHidden = true
             } else if senderValue == 2 {
                 Button2Label.backgroundColor = UIColor.green
-                Button2Label.pulsate()
+                //Button2Label.pulsate()
+                Button1Label.isHidden = true
+                Button3Label.isHidden = true
+                Button4Label.isHidden = true
             } else if senderValue == 3 {
                 Button3Label.backgroundColor = UIColor.green
-                Button3Label.pulsate()
+                //Button3Label.pulsate()
+                Button2Label.isHidden = true
+                Button1Label.isHidden = true
+                Button4Label.isHidden = true
             } else if senderValue == 4 {
                 Button4Label.backgroundColor = UIColor.green
-                Button4Label.pulsate()
+                //Button4Label.pulsate()
+                Button2Label.isHidden = true
+                Button3Label.isHidden = true
+                Button1Label.isHidden = true
+        
             }
             score = score + 1
             correctAnswerCount = correctAnswerCount + 1
@@ -304,18 +335,22 @@ class ViewController: UIViewController {
             //print("shame")
             if senderValue == 1 {
                 Button1Label.backgroundColor = UIColor.red
-                Button1Label.shake()
+                //Button1Label.shake()
+                Button1Label.setTitleColor(UIColor.white, for: .normal)
               
             } else if senderValue == 2 {
                 Button2Label.backgroundColor = UIColor.red
-                Button2Label.shake()
+                //Button2Label.shake()
+                Button2Label.setTitleColor(UIColor.white, for: .normal)
             } else if senderValue == 3 {
                 Button3Label.backgroundColor = UIColor.red
-                Button3Label.shake()
+                //Button3Label.shake()
+                Button3Label.setTitleColor(UIColor.white, for: .normal)
                 print("hello 3")
             } else if senderValue == 4 {
                 Button4Label.backgroundColor = UIColor.red
-                Button4Label.shake()
+                //Button4Label.shake()
+                Button4Label.setTitleColor(UIColor.white, for: .normal)
             }
             wrongAnswerCount = wrongAnswerCount + 1
             myWrongAnswerCollecction.append(currentQuestion.id)

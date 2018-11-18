@@ -18,7 +18,7 @@ class LevelViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     //var questionNumber = 0
     
-    var name = ["Level 1","Level 2","Level 3","Level 4","Level 5"]
+    var name = ["Generation 1","Generation 2","Generation 3","Generation 4","Generation 5","Generation 6","Generation 7"]
     var myLevelIndex = 0
     
     override func viewDidLoad() {

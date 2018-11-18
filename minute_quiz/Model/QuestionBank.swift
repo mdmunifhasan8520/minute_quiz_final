@@ -15,7 +15,7 @@ class QuestionBank {
     
     init() {
         //creating a quiz item and appending it to the list
-        let item = Question(id: 1, questionImage: UIImage(named: "Diego Maradona_A")!, questionText: "Is It Madona", answer: "Diego Maradona", character: "Diego Maradona", shortDescription: "He is an argentine Footballer.", levelId: 1, firstOption: "Diego Maradona", secondOption: "Pele", thirdOption: "Socrates", fourthOption: "Roberto Carlos")
+        let item = Question(id: 1, questionImage: UIImage(named: "Abra")!, questionText: "Is It Madona", answer: "Abra", character: "Abra", shortDescription: "He is an argentine Footballer.", levelId: 1, firstOption: "Abra", secondOption: "Aerodactyl", thirdOption: "Alakazam", fourthOption: "Arbok")
         
         
         /*
@@ -25,11 +25,11 @@ class QuestionBank {
         //add the Questin to the list of question
         list.append(item)
         
-        list.append(Question(id: 2, questionImage: UIImage(named: "pele_A")!, questionText: "Is It Madona", answer: "Pele", character: "Diego Maradona", shortDescription: "He is an argentine Footballer.", levelId: 1, firstOption: "Roberto Carlos", secondOption: "Pele", thirdOption: "Socrates", fourthOption: "David Beckham"))
+        list.append(Question(id: 2, questionImage: UIImage(named: "Aerodactyl")!, questionText: "Is It Madona", answer: "Aerodactyl", character: "Diego Maradona", shortDescription: "He is an argentine Footballer.", levelId: 1, firstOption: "Magnemite", secondOption: "Clefable", thirdOption: "Dugtrio", fourthOption: "Aerodactyl"))
         
-        list.append(Question(id: 1, questionImage: UIImage(named: "Diego Maradona_A")!, questionText: "Is It Madona", answer: "false", character: "Diego Maradona", shortDescription: "He is an argentine Footballer.", levelId: 2, firstOption: "1", secondOption: "2", thirdOption: "3", fourthOption: "4"))
-        list.append(Question(id: 1, questionImage: UIImage(named: "Diego Maradona_A")!, questionText: "Is It Madona", answer: "false", character: "Diego Maradona", shortDescription: "He is an argentine Footballer.", levelId: 3, firstOption: "1", secondOption: "2", thirdOption: "3", fourthOption: "4"))
-        list.append(Question(id: 1, questionImage: UIImage(named: "Diego Maradona_A")!, questionText: "Is It Madona", answer: "false", character: "Diego Maradona", shortDescription: "He is an argentine Footballer.", levelId: 4, firstOption: "1", secondOption: "2", thirdOption: "3", fourthOption: "4"))
+        list.append(Question(id: 1, questionImage: UIImage(named: "Alakazam")!, questionText: "Is It Madona", answer: "Alakazam", character: "Diego Maradona", shortDescription: "He is an argentine Footballer.", levelId: 1, firstOption: "Cubone", secondOption: "Aerodactyl", thirdOption: "Alakazam", fourthOption: "Doduo"))
+        list.append(Question(id: 1, questionImage: UIImage(named: "Arbok")!, questionText: "Is It Madona", answer: "Arbok", character: "Diego Maradona", shortDescription: "He is an argentine Footballer.", levelId: 1, firstOption: "Clefable", secondOption: "Arbok", thirdOption: "Electrode", fourthOption: "Bulbasaur"))
+        list.append(Question(id: 1, questionImage: UIImage(named: "Arcanine")!, questionText: "Is It Madona", answer: "Arcanine", character: "Diego Maradona", shortDescription: "He is an argentine Footballer.", levelId: 1, firstOption: "Caterpie", secondOption: "Dewgong", thirdOption: "Charmander", fourthOption: "Arcanine"))
         /*
         list.append(Question(id: 2, questionImage: UIImage(named: "pele_A")!, questionText: "Here is pele...", answer: true,character: "Pele",shortDescription: "He is an argentine Footballer.", levelId: 1))
         list.append(Question(id: 3, questionImage: UIImage(named: "David Beckham_A")!, questionText: "David Bhuiya!...", answer: false,character: "Beckham",shortDescription: "He is an argentine Footballer.", levelId: 2))

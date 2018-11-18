@@ -9,7 +9,7 @@
 import UIKit
 
 class Question {
-    //create properties
+    //create properties for Question
     let id: Int
     let questionImage: UIImage!
     let questionText: String

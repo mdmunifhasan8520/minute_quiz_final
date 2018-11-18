@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     //let level = LevelViewController()
     
     //create a variable
-    var pickedAnswer : Bool = false
+    var pickedAnswer : String = ""
     var questionNumber : Int = 0
     
     //for track the score
@@ -55,6 +55,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var progressHud: UIImageView!
     @IBOutlet weak var Button1Label: UIButton!
     @IBOutlet weak var Button2Label: UIButton!
+    @IBOutlet weak var Button3Label: UIButton!
+    @IBOutlet weak var Button4Label: UIButton!
     @IBOutlet weak var LevelId: UILabel!
     
    
@@ -128,18 +130,46 @@ class ViewController: UIViewController {
         if(isGoingToNext) {return}
         //senderValue = 1
         if (sender as AnyObject).tag == 1 {
-            pickedAnswer = true
+            pickedAnswer = levelQuestions[questionNumber].firstOption
+            //pickedAnswer = Button1Label.setTitle(levelQuestions[questionNumber].firstOption, for: .normal)
             //sender.pulsate()
            senderValue += 1
             Button1Label.isEnabled = false
             Button2Label.isEnabled = false
+            Button3Label.isEnabled = false
+            Button4Label.isEnabled = false
+            print(pickedAnswer)
         } else if sender.tag == 2 {
-            pickedAnswer = false
+            pickedAnswer = levelQuestions[questionNumber].secondOption
+            //pickedAnswer = false
            // sender.shake()
             senderValue += 2
             Button1Label.isEnabled = false
             Button2Label.isEnabled = false
+            Button3Label.isEnabled = false
+            Button4Label.isEnabled = false
         }
+        else if sender.tag == 3 {
+            pickedAnswer = levelQuestions[questionNumber].thirdOption
+            //pickedAnswer = false
+            // sender.shake()
+            senderValue += 3
+            Button1Label.isEnabled = false
+            Button2Label.isEnabled = false
+            Button3Label.isEnabled = false
+            Button4Label.isEnabled = false
+        }
+        else if sender.tag == 4 {
+            pickedAnswer = levelQuestions[questionNumber].fourthOption
+            //pickedAnswer = false
+            // sender.shake()
+            senderValue += 4
+            Button1Label.isEnabled = false
+            Button2Label.isEnabled = false
+            Button3Label.isEnabled = false
+            Button4Label.isEnabled = false
+        }
+        
         checkAnswer()
         
         //after checking the answer proceed to the next question
@@ -200,6 +230,8 @@ class ViewController: UIViewController {
         
         Button1Label.isEnabled = true
         Button2Label.isEnabled = true
+        Button3Label.isEnabled = true
+        Button4Label.isEnabled = true
     }
     
     func nextQuestion() {
@@ -211,9 +243,17 @@ class ViewController: UIViewController {
             questionImage.image = levelQuestions[questionNumber].questionImage
             questionLabel.text = levelQuestions[questionNumber].questionText
          
+            //btn.setTitle(title: "Title", for: .normal)
+            Button1Label.setTitle(levelQuestions[questionNumber].firstOption, for: .normal)
+            Button2Label.setTitle(levelQuestions[questionNumber].secondOption, for: .normal)
+            Button3Label.setTitle(levelQuestions[questionNumber].thirdOption, for: .normal)
+            Button4Label.setTitle(levelQuestions[questionNumber].fourthOption, for: .normal)
+            
             
             Button1Label.backgroundColor = UIColor(red: 0.576, green: 0.153, blue: 0.561, alpha: 1.0)
             Button2Label.backgroundColor = UIColor(red: 0.576, green: 0.153, blue: 0.561, alpha: 1.0)
+            Button3Label.backgroundColor = UIColor(red: 0.576, green: 0.153, blue: 0.561, alpha: 1.0)
+            Button4Label.backgroundColor = UIColor(red: 0.576, green: 0.153, blue: 0.561, alpha: 1.0)
            
             //print("after condition:\(level1)")
             
@@ -250,6 +290,12 @@ class ViewController: UIViewController {
             } else if senderValue == 2 {
                 Button2Label.backgroundColor = UIColor.green
                 Button2Label.pulsate()
+            } else if senderValue == 3 {
+                Button3Label.backgroundColor = UIColor.green
+                Button3Label.pulsate()
+            } else if senderValue == 4 {
+                Button4Label.backgroundColor = UIColor.green
+                Button4Label.pulsate()
             }
             score = score + 1
             correctAnswerCount = correctAnswerCount + 1
@@ -263,6 +309,13 @@ class ViewController: UIViewController {
             } else if senderValue == 2 {
                 Button2Label.backgroundColor = UIColor.red
                 Button2Label.shake()
+            } else if senderValue == 3 {
+                Button3Label.backgroundColor = UIColor.red
+                Button3Label.shake()
+                print("hello 3")
+            } else if senderValue == 4 {
+                Button4Label.backgroundColor = UIColor.red
+                Button4Label.shake()
             }
             wrongAnswerCount = wrongAnswerCount + 1
             myWrongAnswerCollecction.append(currentQuestion.id)

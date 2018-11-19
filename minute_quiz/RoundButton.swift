@@ -45,6 +45,14 @@ extension UIButton {
         layer.add(shake, forKey: nil)
         
     }
+    
+    func zoomIn(duration: TimeInterval = 0.2) {
+        self.transform = CGAffineTransform(scaleX: 0.0, y: 0.0)
+        UIButton.animate(withDuration: duration, delay: 0.0, options: [.curveLinear], animations: { () -> Void in
+            self.transform = CGAffineTransform.identity
+        }) { (animationCompleted: Bool) -> Void in
+        }
+    }
 }
 
 

@@ -261,19 +261,13 @@ class ViewController: UIViewController {
             Button2Label.setTitleColor(UIColor.black, for: .normal)
             Button3Label.setTitleColor(UIColor.black, for: .normal)
             Button4Label.setTitleColor(UIColor.black, for: .normal)
-            /*
-            Button1Label.backgroundColor = UIColor.green
-            Button2Labe2.backgroundColor = UIColor.green
-            Button3Labe3.backgroundColor = UIColor.green
-            Button4Labe4.backgroundColor = UIColor.green
-            */
-            /*
-            Button1Label.backgroundColor = UIColor(red: 0.576, green: 0.153, blue: 0.561, alpha: 1.0)
-            Button2Label.backgroundColor = UIColor(red: 0.576, green: 0.153, blue: 0.561, alpha: 1.0)
-            Button3Label.backgroundColor = UIColor(red: 0.576, green: 0.153, blue: 0.561, alpha: 1.0)
-            Button4Label.backgroundColor = UIColor(red: 0.576, green: 0.153, blue: 0.561, alpha: 1.0)
-           */
-            //print("after condition:\(level1)")
+            
+            //animation
+            Button1Label.zoomIn()
+            Button2Label.zoomIn()
+            Button3Label.zoomIn()
+            Button4Label.zoomIn()
+          
             
             updateUI()
         } else {

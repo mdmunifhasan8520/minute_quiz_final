@@ -1,5 +1,5 @@
 //
-//  CircularProgressView.swift
+//  CircularProgressBar.swift
 //  minute_quiz
 //
 //  Created by MacBook Pro on 11/20/18.
@@ -8,28 +8,30 @@
 
 import UIKit
 
-class CircularProgressView: UIView {
 
+class CircularProgressBar: UIView {
+    
+   
+    
     //MARK: awakeFromNib
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setupView()
         label.text = "0"
-        
     }
     
     
     //MARK: Public
     
-    public var lineWidth:CGFloat = 10 {
+    public var lineWidth:CGFloat = 50 {
         didSet{
             foregroundLayer.lineWidth = lineWidth
             backgroundLayer.lineWidth = lineWidth - (0.20 * lineWidth)
         }
     }
     
-    public var labelSize: CGFloat = 10 {
+    public var labelSize: CGFloat = 20 {
         didSet {
             label.font = UIFont.systemFont(ofSize: labelSize)
             label.sizeToFit()
@@ -59,7 +61,7 @@ class CircularProgressView: UIView {
             let animation = CABasicAnimation(keyPath: "strokeEnd")
             animation.fromValue = 0
             animation.toValue = progress
-            animation.duration = 10
+            animation.duration = 2
             foregroundLayer.add(animation, forKey: "foregroundAnimation")
             
         }
@@ -69,11 +71,10 @@ class CircularProgressView: UIView {
             if currentTime >= 2{
                 timer.invalidate()
             } else {
-                currentTime += 0.01
+                currentTime += 0.05
                 let percent = currentTime/2 * 100
                 self.label.text = "\(Int(progress * percent))"
                 self.setForegroundLayerColorForSafePercent()
-                //self.label.isHidden = true
                 self.configLabel()
             }
         }
@@ -122,7 +123,7 @@ class CircularProgressView: UIView {
         foregroundLayer.lineCap = kCALineCapRound
         foregroundLayer.path = path.cgPath
         foregroundLayer.lineWidth = lineWidth
-        foregroundLayer.fillColor = UIColor.clear.cgColor
+        foregroundLayer.fillColor = UIColor.black.cgColor
         foregroundLayer.strokeColor = UIColor.red.cgColor
         foregroundLayer.strokeEnd = 0
         
@@ -132,7 +133,7 @@ class CircularProgressView: UIView {
     
     private func makeLabel(withText text: String) -> UILabel {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-        //label.text = text
+        label.text = text
         label.font = UIFont.systemFont(ofSize: labelSize)
         label.sizeToFit()
         label.center = pathCenter
@@ -146,15 +147,15 @@ class CircularProgressView: UIView {
     
     private func setForegroundLayerColorForSafePercent(){
         if Int(label.text!)! >= self.safePercent {
-            self.foregroundLayer.strokeColor = UIColor.red.cgColor
-        } else {
             self.foregroundLayer.strokeColor = UIColor.green.cgColor
+        } else {
+            self.foregroundLayer.strokeColor = UIColor.red.cgColor
         }
     }
     
     private func setupView() {
         makeBar()
-        //self.addSubview(label)
+        self.addSubview(label)
     }
     
     
@@ -167,9 +168,7 @@ class CircularProgressView: UIView {
             setupView()
             label.text = tempText
             layoutDone = true
-            //hello
         }
     }
     
-
 }

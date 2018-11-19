@@ -241,7 +241,7 @@ class ViewController: UIViewController {
         print(levelQuestions)
         if questionNumber <= levelQuestions.count - 1 {
             questionImage.image = levelQuestions[questionNumber].questionImage
-            questionLabel.text = levelQuestions[questionNumber].questionText
+            //questionLabel.text = levelQuestions[questionNumber].questionText
          
             //btn.setTitle(title: "Title", for: .normal)
             Button1Label.setTitle(levelQuestions[questionNumber].firstOption, for: .normal)
@@ -263,6 +263,13 @@ class ViewController: UIViewController {
             Button4Label.setTitleColor(UIColor.black, for: .normal)
             
             //animation
+         /*
+            Button1Label.zoomInWithEasing()
+            Button2Label.zoomInWithEasing()
+            Button3Label.zoomInWithEasing()
+            Button4Label.zoomInWithEasing()
+ */
+            
             Button1Label.zoomIn()
             Button2Label.zoomIn()
             Button3Label.zoomIn()

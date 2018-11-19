@@ -53,6 +53,22 @@ extension UIButton {
         }) { (animationCompleted: Bool) -> Void in
         }
     }
+    
+    /*
+    func zoomInWithEasing(duration: TimeInterval = 0.2, easingOffset: CGFloat = 0.2) {
+        let easeScale = 1.0 + easingOffset
+        let easingDuration = TimeInterval(easingOffset) * duration / TimeInterval(easeScale)
+        let scalingDuration = duration - easingDuration
+        UIButton.animate(withDuration: scalingDuration, delay: 0.0, options: .curveEaseIn, animations: { () -> Void in
+            self.transform = CGAffineTransform(scaleX: easeScale, y: easeScale)
+        }, completion: { (completed: Bool) -> Void in
+            UIButton.animate(withDuration: easingDuration, delay: 0.0, options: .curveEaseOut, animations: { () -> Void in
+                self.transform = CGAffineTransform.identity
+            }, completion: { (completed: Bool) -> Void in
+            })
+        })
+    }
+ */
 }
 
 

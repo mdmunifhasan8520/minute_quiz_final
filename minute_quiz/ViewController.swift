@@ -37,7 +37,7 @@ class ViewController: UIViewController {
     
     
     //for the Timer
-    var startInt = 20
+    var startInt = 10
     var startTimer = Timer()
     
     //var button1Color = UIColor()
@@ -363,7 +363,7 @@ class ViewController: UIViewController {
         correctAnswerCount = 0
         score = 0
         questionNumber = 0
-        startInt = 3000
+        startInt = 60
         senderValue = 0
         
         gameStart()

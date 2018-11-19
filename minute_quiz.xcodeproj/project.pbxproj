@@ -12,6 +12,7 @@
 		FA518D75211804ED002F9F09 /* Pulsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA518D74211804ED002F9F09 /* Pulsing.swift */; };
 		FA85DCC3211CB0C100C636EF /* LevelViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85DCC2211CB0C100C636EF /* LevelViewCell.swift */; };
 		FA85DCC5211CB1E700C636EF /* LevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85DCC4211CB1E700C636EF /* LevelViewController.swift */; };
+		FA87AC9A21A35E3800DD6A0B /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA87AC9921A35E3800DD6A0B /* CircularProgressView.swift */; };
 		FA8970502119DDA800F38A74 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA89704F2119DDA800F38A74 /* RoundButton.swift */; };
 		FA89845B210CEC2300AA94AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA89845A210CEC2300AA94AF /* AppDelegate.swift */; };
 		FA89845D210CEC2300AA94AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA89845C210CEC2300AA94AF /* ViewController.swift */; };
@@ -31,6 +32,7 @@
 		FA518D74211804ED002F9F09 /* Pulsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pulsing.swift; sourceTree = "<group>"; };
 		FA85DCC2211CB0C100C636EF /* LevelViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelViewCell.swift; sourceTree = "<group>"; };
 		FA85DCC4211CB1E700C636EF /* LevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelViewController.swift; sourceTree = "<group>"; };
+		FA87AC9921A35E3800DD6A0B /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		FA89704F2119DDA800F38A74 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		FA898457210CEC2300AA94AF /* minute_quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = minute_quiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA89845A210CEC2300AA94AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				FA89845E210CEC2300AA94AF /* Main.storyboard */,
 				FA898461210CEC2C00AA94AF /* Assets.xcassets */,
 				FA898466210CEC2C00AA94AF /* Info.plist */,
+				FA87AC9921A35E3800DD6A0B /* CircularProgressView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 				FAE932D821141D8800CA5517 /* ArchiveDetailsViewController.swift in Sources */,
 				FAE932D4211359D300CA5517 /* CollectionViewCell.swift in Sources */,
 				FA89845D210CEC2300AA94AF /* ViewController.swift in Sources */,
+				FA87AC9A21A35E3800DD6A0B /* CircularProgressView.swift in Sources */,
 				FA89845B210CEC2300AA94AF /* AppDelegate.swift in Sources */,
 				FACA2605210E46DD0002CF7C /* StartScreenViewController.swift in Sources */,
 				FAE932D62113D47B00CA5517 /* SettingsViewController.swift in Sources */,

@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var circularView: CircularProgressView!
     //create a QuestioBank object
     let allQuestions = QuestionBank()
     
@@ -99,6 +100,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.circularView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
+   
         print("this is gameplay")
         levelQuestions = allQuestions.list.filter { (q) -> Bool in
             q.levelId == self.selectedLevel
@@ -127,7 +130,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func answerPressed(_ sender: UIButton) {
+        
         if(isGoingToNext) {return}
+        
         //senderValue = 1
         if (sender as AnyObject).tag == 1 {
             pickedAnswer = levelQuestions[questionNumber].firstOption
@@ -387,6 +392,19 @@ class ViewController: UIViewController {
             
             present(alert, animated: true, completion: nil)
         }
+    }
+    /*
+    @objc func animateProgress() {
+        let cP = self.circularView.viewWithTag(101) as! CircularProgressView
+        cP.setProgressWithAnimation(duration: 10.0, value: 1)
+        
+    }*/
+    @objc func handleTap() {
+        circularView.labelSize = 60
+        circularView.safePercent = 100
+        circularView.setProgress(to: 1, withAnimation: true)
+        
+        
     }
 }
 

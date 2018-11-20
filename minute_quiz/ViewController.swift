@@ -229,8 +229,8 @@ class ViewController: UIViewController {
         correctAnswerCountLabel.text = "\(correctAnswerCount)"
         wrongAnswerCountLabel.text = "\(wrongAnswerCount)"
         scoreLabel.text = "Score: \(score)"
-        progressLabel.text = "\(questionNumber + 1) / levelQuestions[questionNumber] "
-        progressBar.frame.size.width = (view.frame.size.width / 5) * CGFloat(questionNumber + 1)
+        //progressLabel.text = "\(questionNumber + 1) / levelQuestions[questionNumber] "
+       // progressBar.frame.size.width = (view.frame.size.width / 5) * CGFloat(questionNumber + 1)
     
         
         Button1Label.isEnabled = true

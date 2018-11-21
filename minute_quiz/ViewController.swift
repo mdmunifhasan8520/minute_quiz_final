@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var circularView: CircularProgressView!
+  
     //create a QuestioBank object
     let allQuestions = QuestionBank()
     
@@ -40,8 +40,6 @@ class ViewController: UIViewController {
     //for the Timer
     var startInt = 10
     var startTimer = Timer()
-    
-    //var button1Color = UIColor()
  
     
     //ui elements from the storyboard
@@ -74,42 +72,15 @@ class ViewController: UIViewController {
     var selectedLevel: Int = 0
     var levelQuestions: [Question] = []
     
-    
-    //var levelQuestionArr = [QuestionBank]()
-    
-    
-    //for heart animation
-    func createImageArray(total: Int, imagePrefix: String) -> [UIImage] {
-        var imageArray: [UIImage] = []
-        
-        for imageCount in 0..<total {
-            let imageName = "\(imagePrefix)-\(imageCount).png"
-            let image = UIImage(named: imageName)!
-            
-            imageArray.append(image)
-        }
-        
-        return imageArray
-    }
-    func animate(imageView: UIImageView, images: [UIImage]) {
-        imageView.animationImages = images
-        imageView.animationDuration = 1
-        imageView.animationRepeatCount = 1
-        imageView.startAnimating()
-    }
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.circularView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
-   
         print("this is gameplay")
         levelQuestions = allQuestions.list.filter { (q) -> Bool in
             q.levelId == self.selectedLevel
         };
-        
-        
-        //heart animation
-        heartImages = createImageArray(total: 24, imagePrefix: "heart")
+
         
         //permanent Data storage
         bestScore = userDefaults.integer(forKey: "hscore")
@@ -121,13 +92,6 @@ class ViewController: UIViewController {
         gameStart()
     }
 
-    @IBAction func Home(_ sender: AnyObject) {
-        /*if bestScore > homeBestScore {
-            bestScore = homeBestScore
-        }*/
-        //userDefaults.set("\(imageArray[0])", forKey: "savedImage")
-        //UserDefaults.standard.set(use.text, forKey: "name")
-    }
     
     @IBAction func answerPressed(_ sender: UIButton) {
         
@@ -229,8 +193,7 @@ class ViewController: UIViewController {
         correctAnswerCountLabel.text = "\(correctAnswerCount)"
         wrongAnswerCountLabel.text = "\(wrongAnswerCount)"
         scoreLabel.text = "Score: \(score)"
-        //progressLabel.text = "\(questionNumber + 1) / levelQuestions[questionNumber] "
-       // progressBar.frame.size.width = (view.frame.size.width / 5) * CGFloat(questionNumber + 1)
+   
     
         
         Button1Label.isEnabled = true
@@ -268,13 +231,6 @@ class ViewController: UIViewController {
             Button4Label.setTitleColor(UIColor.black, for: .normal)
             
             //animation
-         /*
-            Button1Label.zoomInWithEasing()
-            Button2Label.zoomInWithEasing()
-            Button3Label.zoomInWithEasing()
-            Button4Label.zoomInWithEasing()
- */
-            
             Button1Label.zoomIn()
             Button2Label.zoomIn()
             Button3Label.zoomIn()
@@ -307,7 +263,7 @@ class ViewController: UIViewController {
         //let currentQuestion = allQuestions.list[levelQuestions]
         if currentQuestion.answer == pickedAnswer {
             //print("you got it")
-            animate(imageView: progressHud, images: heartImages)
+         
             if senderValue == 1 {
                 Button1Label.backgroundColor = UIColor.green
                 //Button1Label.pulsate()
@@ -393,18 +349,6 @@ class ViewController: UIViewController {
             present(alert, animated: true, completion: nil)
         }
     }
-    /*
-    @objc func animateProgress() {
-        let cP = self.circularView.viewWithTag(101) as! CircularProgressView
-        cP.setProgressWithAnimation(duration: 10.0, value: 1)
-        
-    }*/
-    @objc func handleTap() {
-        circularView.labelSize = 60
-        circularView.safePercent = 100
-        circularView.setProgress(to: 1, withAnimation: true)
-        
-        
-    }
+   
 }
 

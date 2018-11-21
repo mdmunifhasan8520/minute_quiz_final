@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "minute_quiz/ViewController.swift"
-            timestampString = "564416589.600956"
+            timestampString = "564452791.0724289"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
             landmarkName = "ViewController"
             landmarkType = "3">
             <Locations>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "minute_quiz/ViewController.swift"
-            timestampString = "564416589.601371"
+            timestampString = "564452791.0726449"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "ViewController"
             landmarkType = "3">
          </BreakpointContent>

@@ -9,15 +9,22 @@
 import UIKit
 
 class SettingsViewController: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate {
+    //create instance of UserDefaults
+    let userDefaults = UserDefaults.standard
+    
+    
     @IBOutlet weak var pickerTime: UIPickerView!
     @IBOutlet weak var pickerTimeSelectionLabel: UILabel!
     
     var timerArray:[String] = Array()
     
+    var mySelectedTime = 0
+    
     @IBAction func RESET(_ sender: Any) {
         UserDefaults.standard.set([], forKey: "name")
         UserDefaults.standard.set(0, forKey: "hscore")
         UserDefaults.standard.set([], forKey: "scaarr")
+        UserDefaults.standard.set(0, forKey: "gameTimer")
         
         //print("hello")
     }
@@ -37,6 +44,7 @@ class SettingsViewController: UIViewController,UIPickerViewDataSource, UIPickerV
         
         pickerTime.dataSource = self
         pickerTime.delegate = self
+        //print("This iss my asda selected time \(mySelectedTime)")
     }
     
     //UIPickerView Datasource function
@@ -53,6 +61,9 @@ class SettingsViewController: UIViewController,UIPickerViewDataSource, UIPickerV
     }
      func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         pickerTimeSelectionLabel.text = "You want \(timerArray[row]) minutes to play"
+        mySelectedTime = Int(timerArray[row])!
+        UserDefaults.standard.set(mySelectedTime, forKey: "gameTimer")
+        print("This iss my selected time \(mySelectedTime)")
     }
 }
 

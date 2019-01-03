@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    let viewControllerB = SettingsViewController()
+    
   
     //create a QuestioBank object
     let allQuestions = QuestionBank()
@@ -38,7 +40,7 @@ class ViewController: UIViewController {
     
     
     //for the Timer
-    var startInt = 10
+    var startInt = 6
     var startTimer = Timer()
  
     
@@ -73,14 +75,19 @@ class ViewController: UIViewController {
     var levelQuestions: [Question] = []
     
 
-
+    var myPlayingTimer = 1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         print("this is gameplay")
         levelQuestions = allQuestions.list.filter { (q) -> Bool in
             q.levelId == self.selectedLevel
         };
-
+        
+        //game timer Setting
+        myPlayingTimer = userDefaults.integer(forKey: "gameTimer")
+        print("Game Play timer\(myPlayingTimer)")
         
         //permanent Data storage
         bestScore = userDefaults.integer(forKey: "hscore")
@@ -157,7 +164,20 @@ class ViewController: UIViewController {
         levelQuestions.sort { (a, b) -> Bool in (arc4random() % 6) > 3}
         
         //for start the timer
-        timer.text = "\(startInt)"
+        if myPlayingTimer == 1 {
+            startInt = 1 * startInt
+            timer.text = "\(startInt)"
+        } else if myPlayingTimer == 2 {
+            startInt = 2 * startInt
+            timer.text = "\(startInt)"
+        } else if myPlayingTimer == 3 {
+            startInt = 3 * startInt
+            timer.text = "\(startInt)"
+        } else if myPlayingTimer == 4 {
+            startInt = 4 * startInt
+            timer.text = "\(startInt)"
+        }
+        
         startTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(startGameTimer), userInfo: nil, repeats: true)
         
         nextQuestion()
@@ -325,7 +345,10 @@ class ViewController: UIViewController {
         correctAnswerCount = 0
         score = 0
         questionNumber = 0
-        startInt = 60
+        
+        startInt = 6
+       
+        
         senderValue = 0
         
         gameStart()
@@ -333,6 +356,7 @@ class ViewController: UIViewController {
     
     @objc func startGameTimer() {
         startInt -= 1
+        //for start the timer
         timer.text = "\(startInt)"
         
         if startInt == 0 {

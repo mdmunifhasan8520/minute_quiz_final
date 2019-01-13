@@ -12,7 +12,7 @@ class SettingsViewController: UIViewController,UIPickerViewDataSource, UIPickerV
     //create instance of UserDefaults
     let userDefaults = UserDefaults.standard
     
-    
+    //picker view set
     @IBOutlet weak var pickerTime: UIPickerView!
     @IBOutlet weak var pickerTimeSelectionLabel: UILabel!
     
@@ -28,12 +28,12 @@ class SettingsViewController: UIViewController,UIPickerViewDataSource, UIPickerV
         
         //print("hello")
     }
-
+    /*
     @IBAction func backToHomeScreen(_ sender: Any) {
          //print("settings:\(highestScore)")
         print("back to home")
     }
-    
+    */
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -63,7 +63,7 @@ class SettingsViewController: UIViewController,UIPickerViewDataSource, UIPickerV
         pickerTimeSelectionLabel.text = "You want \(timerArray[row]) minutes to play"
         mySelectedTime = Int(timerArray[row])!
         UserDefaults.standard.set(mySelectedTime, forKey: "gameTimer")
-        print("This iss my selected time \(mySelectedTime)")
+        print("This is my selected time \(mySelectedTime)")
     }
 }
 

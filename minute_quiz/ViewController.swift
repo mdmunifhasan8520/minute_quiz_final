@@ -74,7 +74,7 @@ class ViewController: UIViewController {
     var selectedLevel: Int = 0
     var levelQuestions: [Question] = []
     
-
+    //for picker View Time set
     var myPlayingTimer = 1
     
     override func viewDidLoad() {
@@ -85,15 +85,13 @@ class ViewController: UIViewController {
             q.levelId == self.selectedLevel
         };
         
-        //game timer Setting
-        myPlayingTimer = userDefaults.integer(forKey: "gameTimer")
-        print("Game Play timer\(myPlayingTimer)")
-        
         //permanent Data storage
         bestScore = userDefaults.integer(forKey: "hscore")
         homeBestScore = userDefaults.integer(forKey: "hscoreforGamePlay")
         storedCorrentAnswerArr = userDefaults.object(forKey: "scaarr") as? [Int] ?? [Int]()
         storedWrongAnswerArr = userDefaults.object(forKey: "swaarr") as? [Int] ?? [Int]()
+        //game timer Setting
+        myPlayingTimer = userDefaults.integer(forKey: "gameTimer")
         
         //display First Question
         gameStart()
@@ -109,12 +107,12 @@ class ViewController: UIViewController {
             pickedAnswer = levelQuestions[questionNumber].firstOption
             //pickedAnswer = Button1Label.setTitle(levelQuestions[questionNumber].firstOption, for: .normal)
             //sender.pulsate()
-           senderValue += 1
+            senderValue += 1
             Button1Label.isEnabled = false
             Button2Label.isEnabled = false
             Button3Label.isEnabled = false
             Button4Label.isEnabled = false
-            print(pickedAnswer)
+            //print(pickedAnswer)
         } else if sender.tag == 2 {
             pickedAnswer = levelQuestions[questionNumber].secondOption
             //pickedAnswer = false
